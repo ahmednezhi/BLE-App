@@ -38,12 +38,8 @@ fun BleScreen(bleViewModel: BleViewModel = hiltViewModel()) {
             .alpha(0.5f), contentAlignment = Alignment.Center
     ) {
         Column {
-            CustomText(text = "Send 0 to change the color to : Yellow")
-            CustomText(text = "Send 1 to change the color to : Green")
-            CustomText(text = "Send 2 to change the color to : Blue")
-            CustomText(text = "Send 3 to change the color to : Red")
-            CustomText(text = "Send 4 to change the color to : Cyan")
-            CustomText(text = "Otherwise, White")
+            CustomText(text = "Send 0 to change the color to : Green")
+            CustomText(text = "Other numbers to change the color to : Red")
         }
     }
 
@@ -59,7 +55,7 @@ fun CustomText(text: String) {
             .shadow(elevation = 14.dp, shape = RoundedCornerShape(6.dp))
             .background(color = Color.White, shape = RoundedCornerShape(16.dp))
             .padding(24.dp),
-        color = Color.Black
+        color = Color.Black,
     )
 }
 
@@ -67,12 +63,8 @@ fun CustomText(text: String) {
 @Composable
 fun colorFromValue(value: Int): Color {
     return when (value) {
-        0 -> Color.Yellow
-        1 -> Color.Green
-        2 -> Color.Blue
-        3 -> Color.Red
-        4 -> Color.Cyan
-        else -> Color.White // When the value is greater than 0, the background is white
+        0 -> Color.Green
+        else -> Color.Red
     }
 }
 

@@ -29,7 +29,7 @@ class BleManager @Inject constructor(@ApplicationContext private val context: Co
     private val bluetoothAdapter: BluetoothAdapter = bluetoothManager.adapter
     private var bluetoothGattServer: BluetoothGattServer? = null
 
-    private val _screenColor = MutableStateFlow<Int>(999) // Default color green
+    private val _screenColor = MutableStateFlow<Int>(0) // Default color green
     val screenColor: StateFlow<Int> = _screenColor.asStateFlow()
 
 
